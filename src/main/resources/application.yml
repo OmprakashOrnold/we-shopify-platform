@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: we-shopify-platform
+  datasource:
+    username: admin
+    password: 7d#7,4%Z26(u;pt
+    url: jdbc:mysql://practice.c9uwysq4ata2.ap-south-1.rds.amazonaws.com:3306/we-shopify-platform?useSSL=false&serverTimezone=UTC
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
