@@ -18,8 +18,8 @@ public class CustomerServiceImpl implements CustomerService {
     private final MapperUtils mapperUtils;
 
     @Override
-    public void saveCustomer(CustomerDTO customerDTO) {
+    public Customer saveCustomer(CustomerDTO customerDTO) {
         Customer customer = mapperUtils.map( customerDTO, Customer.class );
-        customerRepository.save( customer );
+        return customerRepository.save( customer );
     }
 }
