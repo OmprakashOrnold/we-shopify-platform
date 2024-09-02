@@ -27,7 +27,7 @@ public class CustomerController {
 
 
     @PostMapping("/sign-up")
-    public String registerCustomer(CustomerDTO customerDTO, Model model, RedirectAttributes redirectAttributes) {
+    public String registerCustomer(CustomerDTO customerDTO,RedirectAttributes redirectAttributes) {
         log.info( "customerDTO: {}", customerDTO );
         Customer savedCustomer = customerService.saveCustomer( customerDTO );
 
