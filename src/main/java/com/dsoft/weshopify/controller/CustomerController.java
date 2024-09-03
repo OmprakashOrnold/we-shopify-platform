@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 @Slf4j
@@ -27,7 +29,7 @@ public class CustomerController {
 
 
     @PostMapping("/sign-up")
-    public String registerCustomer(CustomerDTO customerDTO, Model model, RedirectAttributes redirectAttributes) {
+    public String registerCustomer(CustomerDTO customerDTO,RedirectAttributes redirectAttributes) {
         log.info( "customerDTO: {}", customerDTO );
         Customer savedCustomer = customerService.saveCustomer( customerDTO );
 
@@ -37,5 +39,11 @@ public class CustomerController {
             return "redirect:/login";
         }
         return "sign-up";
+    }
+
+    @GetMapping("/customers")
+    public List<Customer> getAllCustomers(){
+        log.info("Get All Customers method started " );
+        return  customerService.getAllCustomers();
     }
 }
